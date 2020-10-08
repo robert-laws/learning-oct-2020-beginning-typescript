@@ -1,10 +1,11 @@
-var character = 'mario';
-var age = 34;
-var isManager = false;
-character = 'luigi';
-age = 6;
-isManager = true;
-var circ = function (diameter) {
-    return diameter * Math.PI;
+var names = ['bob', 'hal', 'jim'];
+var numbers = [4, 6, 8, 10];
+var mixed = ['bill', 6, true, 'hal', 11];
+var item = {
+    name: 'brush',
+    size: 35
 };
-console.log(circ(4));
+item = {
+    name: 'bill',
+    size: 5
+};

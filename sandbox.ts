@@ -1,13 +1,15 @@
-let character = 'mario';
-let age = 34;
-let isManager = false;
+let names = ['bob', 'hal', 'jim'];
 
-character = 'luigi';
-age = 6;
-isManager = true;
+let numbers = [4, 6, 8, 10];
 
-const circ = (diameter: number) => {
-  return diameter * Math.PI;
+let mixed = ['bill', 6, true, 'hal', 11];
+
+let item = {
+  name: 'brush',
+  size: 35,
 };
 
-console.log(circ(4));
+item = {
+  name: 'bill',
+  size: 5,
+};
