@@ -1,11 +1,13 @@
-const character = 'bob cobb';
+let character = 'mario';
+let age = 34;
+let isManager = false;
 
-console.log(character);
+character = 'luigi';
+age = 6;
+isManager = true;
 
-const inputs = document.querySelectorAll('input');
+const circ = (diameter: number) => {
+  return diameter * Math.PI;
+};
 
-console.log(inputs);
-
-inputs.forEach((input) => {
-  console.log(input);
-});
+console.log(circ(4));
