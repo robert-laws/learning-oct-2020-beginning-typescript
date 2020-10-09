@@ -24,7 +24,7 @@ isLoggedIn: false;
 firstName = 'Hal';
 
 // arrays
-let items: string[];
+let items: string[] = [];
 items.push('pencil')
 items = ['brush', 'stuff'];
 
@@ -53,7 +53,7 @@ playerTwo = {
   isManager: true
 }
 
-let locations: (object)[];
+let locations: (object)[] = [];
 locations.push({ name: 'Chicago'})
 
 // dynamic - any - type

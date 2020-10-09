@@ -1,13 +1,14 @@
+"use strict";
 var names = ['bob', 'hal', 'jim'];
 var numbers = [4, 6, 8, 10];
 var mixed = ['bill', 6, true, 'hal', 11];
 var item = {
     name: 'brush',
-    size: 35
+    size: 35,
 };
 item = {
     name: 'bill',
-    size: 5
+    size: 5,
 };
 // explicit types
 var firstName;
@@ -17,7 +18,7 @@ price = 43;
 isLoggedIn: false;
 firstName = 'Hal';
 // arrays
-var items;
+var items = [];
 items.push('pencil');
 items = ['brush', 'stuff'];
 // union types
@@ -36,7 +37,7 @@ playerTwo = {
     age: 34,
     isManager: true
 };
-var locations;
+var locations = [];
 locations.push({ name: 'Chicago' });
 // dynamic - any - type
 var place = 25;
