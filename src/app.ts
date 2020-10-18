@@ -1,35 +1,4 @@
-// invoice class
-class Invoice {
-  private _client: string;
-  private _details: string;
-  private _amount: number;
-
-  constructor(client: string, details: string, amount: number) {
-    this._client = client;
-    this._details = details;
-    this._amount = amount;
-  }
-
-  get client() {
-    return this._client;
-  }
-
-  set client(value: string) {
-    this._client = value;
-  }
-
-  get details() {
-    return this._details;
-  }
-
-  get amount() {
-    return this._amount;
-  }
-
-  format() {
-    return `${this._client} owes $${this._amount} for ${this._details}.`;
-  }
-}
+import Invoice from './classes/Invoice.js';
 
 const invoiceOne = new Invoice('Bob Cobb', 'pencil', 3.5);
 const invoiceTwo = new Invoice('Hal Hope', 'spoon', 2.25);
