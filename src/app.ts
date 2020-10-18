@@ -1,86 +1,56 @@
-// explicit types
-let character: string;
-let age: number;
-let isLoggedIn: boolean;
+// invoice class
+class Invoice {
+  private _client: string;
+  private _details: string;
+  private _amount: number;
 
-character = 'Hal';
-
-// arrays
-let items: string[] = [];
-let stuff: (string | number)[] = [];
-
-// union types
-let person: string | number;
-person = 'Bob';
-person = 4;
-
-// objects
-type StoreSale = {
-  id: number;
-  name: string;
-};
-
-let sale: StoreSale = {
-  id: 4,
-  name: 'Hat',
-};
-
-let myAge: any;
-myAge = 35;
-myAge = ['hello'];
-
-// functions
-let greet: Function;
-
-greet = () => {
-  console.log('hello there!');
-};
-
-const add = (a: number, b: number, c: number = 10) => {
-  console.log(c);
-  return a + b;
-};
-
-console.log(add(5, 7, 40));
-
-type StrOrNum = string | number;
-
-type User = {
-  uid: StrOrNum;
-  name: string;
-};
-
-const logDetails = (user: User) => {
-  console.log(user.name);
-};
-
-logDetails({ uid: '5', name: 'Bob' });
-
-// function signature
-let welcome: (a: string, b: string) => void;
-welcome = (name: string, greeting: string) => {
-  console.log(`${name} says ${greeting}`);
-};
-welcome('Kal', 'How are you?');
-
-let calc: (a: number, b: number, c: string) => number;
-calc = (x: number, y: number, action: string) => {
-  if (action === 'add') {
-    return x + y;
-  } else if (action === 'subtract') {
-    return x - y;
-  } else {
-    return -1;
+  constructor(client: string, details: string, amount: number) {
+    this._client = client;
+    this._details = details;
+    this._amount = amount;
   }
-};
-console.log(calc(5, 8, 'add'));
 
-type Person = {
-  name: string;
-  age: number;
-};
-let logPerson: (myObj: Person) => void;
-logPerson = (myPerson: { name: string; age: number }) => {
-  console.log(`hello, ${myPerson.name} ---- age: ${myPerson.age.toString()}`);
-};
-logPerson({ name: 'Mel', age: 35 });
+  get client() {
+    return this._client;
+  }
+
+  set client(value: string) {
+    this._client = value;
+  }
+
+  get details() {
+    return this._details;
+  }
+
+  get amount() {
+    return this._amount;
+  }
+
+  format() {
+    return `${this._client} owes $${this._amount} for ${this._details}.`;
+  }
+}
+
+const invoiceOne = new Invoice('Bob Cobb', 'pencil', 3.5);
+const invoiceTwo = new Invoice('Hal Hope', 'spoon', 2.25);
+console.log(invoiceOne.format());
+
+invoiceOne.client = 'Mel Mope';
+console.log(invoiceOne.format());
+
+let invoices: Invoice[] = [];
+invoices.push(invoiceOne);
+invoices.push(invoiceTwo);
+
+const form = <HTMLFontElement>document.querySelector('#new-item-form');
+
+const type = <HTMLSelectElement>document.querySelector('#type');
+const toFrom = <HTMLInputElement>document.querySelector('#toFrom');
+const details = <HTMLInputElement>document.querySelector('#details');
+const amount = <HTMLInputElement>document.querySelector('#amount');
+
+form.addEventListener('submit', (event: Event) => {
+  event.preventDefault();
+
+  console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
+});
